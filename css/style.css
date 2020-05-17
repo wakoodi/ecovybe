@@ -1,0 +1,13 @@
+body{
+    background-color: #EDEEDF;
+}
+.logo{
+    width:150px;
+}
+
+.header{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: #A3B175;
+}

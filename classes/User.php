@@ -347,4 +347,15 @@ class User
             header("Location: home.php");
         }
     }
+
+    public function findCurrentUser( $email ) 
+    {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT * FROM users where email = :email' );
+        $statement->bindValue( ':email', $email );
+        $statement->execute();
+        $result = $statement->fetch( PDO::FETCH_ASSOC );
+
+        return $result;
+    }
 }
