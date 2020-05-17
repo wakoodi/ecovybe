@@ -8,6 +8,7 @@ if (isset($_SESSION['user'])) {
     $person = new User;
     $info = $person->findCurrentUser($email);
 
+
 } else {
     header("Location: login.php");
 }

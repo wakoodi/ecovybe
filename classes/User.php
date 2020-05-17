@@ -358,4 +358,44 @@ class User
 
         return $result;
     }
+
+    public function findGardens($currentUserId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT * FROM garden where user_id = :currentUserId' );
+        $statement->bindValue( ':currentUserId', $currentUserId );
+        $statement->execute();
+        $result = $statement->fetchAll( PDO::FETCH_ASSOC );
+
+        return $result;
+    }
+
+    public function findVegetable($gardenId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT vegetable.* FROM vegetable INNER JOIN garden ON garden.vegetable_id = vegetable.id WHERE garden.id = :gardenId AND garden.vegetable_id != 0 ' );
+        $statement->bindValue( ':gardenId', (int)$gardenId );
+        $statement->execute();
+        $result = $statement->fetch( PDO::FETCH_ASSOC );
+
+        return $result;
+    }
+
+    public function findHerb($gardenId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT herb.* FROM herb INNER JOIN garden ON garden.herb_id = herb.id WHERE garden.id = :gardenId AND garden.herb_id != 0 ' );
+        $statement->bindValue( ':gardenId', (int)$gardenId );
+        $statement->execute();
+        $result = $statement->fetch( PDO::FETCH_ASSOC );
+
+        return $result;
+    }
+
+    public function findFruit($gardenId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT fruit.* FROM fruit INNER JOIN garden ON garden.fruit_id = fruit.id WHERE garden.id = :gardenId AND garden.fruit_id != 0 ' );
+        $statement->bindValue( ':gardenId', (int)$gardenId );
+        $statement->execute();
+        $result = $statement->fetch( PDO::FETCH_ASSOC );
+
+        return $result;
+    }
 }
