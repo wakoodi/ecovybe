@@ -23,9 +23,9 @@ function checkEmail() {
             console.log(result);
 
             if (result[ 'status' ] === "success") {
-                available.innerHTML = "<p>✔ Email is available.</p>";
+                available.innerHTML = "<p>✔ Email is beschikbaar.</p>";
             } else {
-                available.innerHTML = "<p>❌Email is not available.</p>";
+                available.innerHTML = "<p>❌Email is bezet.</p>";
             }
 
         })

@@ -29,28 +29,31 @@
     <title>Login</title>
 </head>
 <body>
-    <nav>
-        <p>Ecovybe</p>
-    </nav>
+    <div class="header">
+        <a href="home.php"><img class="logo" src="public/images/logo.png" alt="logo ecovybe"></a>
+    </div>
     <?php if ( isset( $error ) ): ?>
     <div class = 'alert alert-danger' role = 'alert'>
         <?php echo $error ?>
     </div>
     <?php endif; ?>
 
+    <h1>Hallo! Log in om verter te tuinieren.</h1>
+
     <form action="" method="post">
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter email" name="email" id="email" class="form-control">
+        <!---<label for="email">Email</label>--->
+        <img src="public/icons/plant.png" alt="plant icon">
+        <input type="email" placeholder="Email" name="email" id="email" class="form-control">
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" name="password" id="password" class="form-control">
+        <!---<label for="password">Wachtwoord</label>--->
+        <img src="public/icons/plant.png" alt="plant icon">
+        <input type="password" placeholder="Wachtwoord" name="password" id="password" class="form-control">
       </div>
       <div>
-      <input type="submit" value="Sign in" class="btn btn-primary">
-      <p class = 'acc'>Want to register?</p>
-      <a href = 'index.php' class = 'btn btn-primary btn-xs'>Create account</a>
+        <input type="submit" value="Log in" class="btn btn-primary">
+        <p class = 'acc'>Nog geen account? <a href = 'index.php' >Registreer hier.</a></p>
       </div>
     </form>
     <script src = 'https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity = 'sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin = 'anonymous'></script>

@@ -12,12 +12,12 @@ if ( isset( $_POST['email'] ) ) {
     if ( $res ) {
         $response = [
             'status' => 'success',
-            'available' => 'Email is available'
+            'available' => 'Email is beschikbaar'
         ];
     } else {
         $response = [
             'status' => 'fail',
-            'available' => 'Email is not available'
+            'available' => 'Email is bezet'
         ];
     }
 

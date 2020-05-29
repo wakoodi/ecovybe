@@ -26,44 +26,51 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <nav>
-        <p>Ecovybe</p>
-    </nav>
+    <div class="header">
+        <a href="home.php"><img class="logo" src="public/images/logo.png" alt="logo ecovybe"></a>
+    </div>
+
+    <?php if (isset($error)): ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $error ?>
+        </div>
+    <?php endif; ?>
+
+    <h1>Registreer hier om te starten met tuinieren.</h1>
+
     <form action="" method="post">
-        <h1>Create an account</h1>
-        <?php if (isset($error)): ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo $error ?>
-            </div>
-        <?php endif; ?>
         <?php if (isset($success)): ?>
             <div class="alert alert-success" role="alert">
                 <?php echo $success ?>
-                <p>You can now log in!</p>
-                <a href="login.php" class="btn btn-primary btn-xs">Go to log In</a>
+                <p>Je kan nu inloggen!</p>
+                <a href="login.php" class="btn btn-primary btn-xs">Ga naar login.</a>
             </div>
         <?php endif; ?>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" name="email" placeholder="Email address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <!---<label for="exampleInputEmail1">Email</label>--->
+            <img src="public/icons/plant.png" alt="plant icon">
+            <input type="email" name="email" placeholder="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <span id="available"></span>
         </div>
         <div class="form-group">
-            <label for="firstName">First name</label>
-            <input class="form-control" name="firstName" type="text" placeholder="First name" id="firstName">
+            <!---<label for="firstName">Voornaam</label>--->
+            <img src="public/icons/plant.png" alt="plant icon">
+            <input class="form-control" name="firstName" type="text" placeholder="Voornaam" id="firstName">
         </div>
         <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input class="form-control" name="lastName" type="text" placeholder="Last name" id="lastName">
+            <!---<label for="lastName">Achternaam</label>--->
+            <img src="public/icons/plant.png" alt="plant icon">
+            <input class="form-control" name="lastName" type="text" placeholder="Achternaam" id="lastName">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Password" id="exampleInputPassword1">        
+            <!---<label for="exampleInputPassword1">Wachtwoord</label>--->
+            <img src="public/icons/plant.png" alt="plant icon">
+            <input type="password" name="password" class="form-control" placeholder="Wachtwoord" id="exampleInputPassword1">        
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Registreer</button>
         <div>
-        <p class="acc">Already have an account?</p>
-        <a href="login.php" class="btn btn-primary btn-xs">Log In</a>
+        <p class="acc">Heb je al een account? <a href="login.php">Log In</a></p>
+        
         </div>
     </form>
     <script src="js/checkEmail.js"></script>
