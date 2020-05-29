@@ -32,9 +32,15 @@ if (isset($_SESSION['user'])) {
         <input type="text" placeholder="Naam tuin" name="gardenName" id="gardenName" class="form-control">
       </div>
       <div class="form-group">
-        <label for="sort">Kies wat je zal kweken</label>
-        <img src="public/icons/plant.png" alt="plant icon">
-        <input type="password" placeholder="Wachtwoord" name="password" id="password" class="form-control">
+        <form action="" method="POST">
+            <div class="dropdown">
+            <label for="what">Kies wat je zal kweken</label></br>
+                <select name="what" class="form-control">
+                    <option>Aardbeien</option>
+                    <option>Basilicum</option>
+                    <option>Tomaat</option>
+                </select>
+            </div>
       </div>
       <div>
         <input type="submit" value="Start met groeien!" class="btn btn-primary">

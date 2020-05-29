@@ -11,7 +11,7 @@
                 <a class="nav-link" href="profile.php"><img src="public/icons/profile.png" alt="profile icon">Profiel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="info.php"><img src="public/icons/logout.png" alt="logout icon">Afmelden</a>
+                <a class="nav-link" href="logout.php"><img src="public/icons/logout.png" alt="logout icon">Afmelden</a>
             </li>
         </ul>
     </div>
