@@ -25,7 +25,13 @@ if (isset($_SESSION['user'])) {
 </head>
 <body>
     <?php include("includes/header.php") ?>
-    I'm the notification page
+    <div>
+        <h1>Hallo <?php echo htmlspecialchars($info['firstName'])?></h1>
+        <p>Het waterniveau bij je tomaten is lager dan 10%, je zal deze snel moeten aanvullen.</p>
+        <div>
+            <input type="submit" value="Ga naar mijn tuintjes" class="btn btn-primary">
+        </div>
+    </div>
     <?php include("includes/nav.php") ?>
 </body>
 <script src = 'https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity = 'sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin = 'anonymous'></script>

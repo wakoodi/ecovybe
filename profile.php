@@ -26,6 +26,27 @@ if (isset($_SESSION['user'])) {
 <body>
     <?php include("includes/header.php") ?>
     <h1><?php echo htmlspecialchars($info['firstName'])." ".htmlspecialchars($info['lastName'])?></h1>
+    <div>
+        <p>Hulp in de applicatie</p>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <ul>
+        <li>
+            <p>Heeft tomaten water gegeven</p>
+            <p>2h geleden</p>
+        </li>
+        <li>
+            <p>Heeft tomaten geplant</p>
+            <p>1d geleden</p>
+        </li>
+        <li>
+            <p>Heeft tuintje aangemaakt</p>
+            <p>2d geleden</p>
+        </li>
+    </ul>
     <?php include("includes/nav.php") ?>
 </body>
 <script src = 'https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity = 'sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin = 'anonymous'></script>
