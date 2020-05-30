@@ -7,7 +7,7 @@ if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $person = new User;
     $info = $person->findCurrentUser($email);
-
+    $items = $person->findAllItems();
 
 } else {
     header("Location: login.php");
@@ -34,11 +34,11 @@ if (isset($_SESSION['user'])) {
       <div class="form-group">
         <form action="" method="POST">
             <div class="dropdown">
-            <label for="what">Kies wat je zal kweken</label></br>
-                <select name="what" class="form-control">
-                    <option>Aardbeien</option>
-                    <option>Basilicum</option>
-                    <option>Tomaat</option>
+            <label for="items">Kies wat je zal kweken</label></br>
+                <select name="items" class="form-control">
+                    <?php foreach ($items as $item){
+                        echo "<option value=$item>$item</option>";
+                    }?>
                 </select>
             </div>
       </div>

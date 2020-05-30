@@ -378,4 +378,13 @@ class User
 
         return $result;
     }
+
+    public function findAllItems(){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare( 'SELECT name FROM items' );
+        $statement->execute();
+        $allNames = $statement->fetchAll( PDO::FETCH_COLUMN );
+        
+        return $allNames;
+    }
 }
