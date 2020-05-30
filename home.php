@@ -33,25 +33,14 @@ if (isset($_SESSION['user'])) {
         <?php foreach ($gardens as $garden) : ?>
            <?php $gardenId = $garden['id'];
 
-            $vegetable = $person->findVegetable($gardenId);
-            $herb = $person->findHerb($gardenId);
-            $fruit = $person->findFruit($gardenId); ?>
+            $item = $person->findItem($gardenId);
+            ?>
         <a href="advice.php" class="advice">
             <div class="singleGarden">
                 <p> 
-                    <?php if($vegetable != false): ?>
-                        <img src="<?php echo $vegetable['pic_url']?>" alt="product">
-                        <h2><?php echo htmlspecialchars($garden['name'])?></h2>
-                        <?php echo $vegetable['name']?>
-                    <?php elseif($herb != false): ?>
-                        <img src="<?php echo $herb['pic_url']?>" alt="product">
-                        <h2><?php echo htmlspecialchars($garden['name'])?></h2>
-                        <?php echo $herb['name']?>
-                    <?php elseif($fruit != false): ?>
-                        <img src="<?php echo $fruit['pic_url']?>" alt="product">
-                        <h2><?php echo htmlspecialchars($garden['name'])?></h2>
-                        <?php echo $fruit['name']?>
-                    <?php endif; ?>
+                    <img src="<?php echo $item['pic_url']?>" alt="product">
+                    <h2><?php echo htmlspecialchars($garden['name'])?></h2>
+                    <?php echo $item['name']?>
                 </p>
                 <a href="advice.php">Advies</a>
             </div>
