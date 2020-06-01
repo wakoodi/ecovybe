@@ -29,7 +29,7 @@ if (isset($_SESSION['user'])) {
         <h1>Hallo <?php echo htmlspecialchars($info['firstName'])?></h1>
         <p>Het waterniveau bij je tomaten is lager dan 10%, je zal deze snel moeten aanvullen.</p>
         <div>
-            <input type="submit" value="Ga naar mijn tuintjes" class="btn btn-primary">
+            <a href="home.php" class="btn btn-primary">Ga naar mijn tuintjes</a>
         </div>
     </div>
     <?php include("includes/nav.php") ?>
