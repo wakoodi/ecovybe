@@ -7,7 +7,8 @@ if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $person = new User;
     $info = $person->findCurrentUser($email);
-
+    $id = $_GET["id"];
+    $profileData = $person->publicInfo($id);
 
 } else {
     header("Location: login.php");
@@ -29,9 +30,9 @@ if (isset($_SESSION['user'])) {
     <ul class="progress">
         <li>Zaaien</li>
         <li>Wateren</li>
-        <li>Verplanten</li>
         <li>Oogsten</li>
     </ul>
+    <p><?php echo $id ?></p>
     <ul class="details">
         <li>Soort grond Natuurlijk</li>
         <li>Vochtigheid 55%</li>
