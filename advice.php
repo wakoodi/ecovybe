@@ -7,9 +7,14 @@ if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $person = new User;
     $info = $person->findCurrentUser($email);
-    $id = $_GET["id"];
-    $profileData = $person->publicInfo($id);
+    $user_id = $info["id"];
+    
+    $gardenId = $person->getGardenId();
+    $gardenData = $person->specificGarden($user_id, $gardenId);
 
+
+
+   
 } else {
     header("Location: login.php");
 }
@@ -32,13 +37,8 @@ if (isset($_SESSION['user'])) {
         <li>Wateren</li>
         <li>Oogsten</li>
     </ul>
-    <p><?php echo $id ?></p>
-    <ul class="details">
-        <li>Soort grond Natuurlijk</li>
-        <li>Vochtigheid 55%</li>
-        <li>Waterstand 75%</li>
-        <li>Temperatuur 20°C</li>
-    </ul>
+    <p><?php echo $gardenData["name"]; ?></p>
+    <iframe src="https://console.thinger.io/#!/dashboards/Data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJEYXNoYm9hcmRfRGF0YSIsInVzciI6Ikxpc2FEcnNlIn0.PrKchtvblAevWCZH_idVyfQseaOfjrr5W7HjcWG8igk" frameborder="0" title="dashboard"></iframe>
     <?php include("includes/nav.php") ?>
 </body>
 <script src = 'https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity = 'sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin = 'anonymous'></script>

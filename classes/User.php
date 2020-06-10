@@ -13,6 +13,8 @@ class User
     private $currentFirstName;
     private $currentLastName;
     private $currentPassword;
+    private $gardenId;
+
 
     /**
     * Get the value of id
@@ -388,14 +390,28 @@ class User
         return $allNames;
     }
 
-   /* public function specificInfo( $id ) 
+   public function specificGarden( $user_id, $garden_id ) 
     {
+        $gardenId = $this->getGardenId($garden_id);
         $conn = Db::getConnection();
-        $stmt = $conn->prepare( 'SELECT * FROM garden WHERE id=:id' );
-        $stmt->bindValue( ':id', $id );
+        $stmt = $conn->prepare( 'SELECT * FROM garden WHERE user_id=:user_id AND id=:garden_id' );
+        $stmt->bindValue( ':user_id', $user_id );
+        $stmt->bindValue( ':garden_id', $gardenId );
         $stmt->execute();
         $return = $stmt->fetchAll( PDO::FETCH_ASSOC );
-
+        var_dump($return);
         return $return;
-    }*/
+    }
+
+ 
+    public function getGardenId()
+    {
+        return $this->gardenId;
+    }
+
+    public function setGardenId($gardenId)
+    {
+        $this->gardenId = $gardenId;
+        return $this;
+    }
 }

@@ -6,9 +6,8 @@ include_once( __DIR__ . '/classes/User.php' );
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $person = new User;
-    $info = $person->findCurrentUser($email);
     $items = $person->findAllItems();
-
+    $info = $person->findCurrentUser($email);
 } else {
     header("Location: login.php");
 }
@@ -37,6 +36,7 @@ if (isset($_SESSION['user'])) {
             <label for="items">Kies wat je zal kweken</label></br>
                 <select name="items" class="form-control">
                     <?php foreach ($items as $item){
+                        $item->setGardenId($item['id']);
                         echo "<option value=$item>$item</option>";
                     }?>
                 </select>
