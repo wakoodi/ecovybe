@@ -414,4 +414,13 @@ class User
         $this->gardenId = $gardenId;
         return $this;
     }
+
+    public function doCurl(){
+      
+        $result = file_get_contents("http://localhost/ecovybe/curl.php");
+        $array = json_decode($result, true);
+        var_dump($array);
+        
+        return $array;
+    }
 }
