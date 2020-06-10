@@ -387,4 +387,15 @@ class User
         
         return $allNames;
     }
+
+   /* public function specificInfo( $id ) 
+    {
+        $conn = Db::getConnection();
+        $stmt = $conn->prepare( 'SELECT * FROM garden WHERE id=:id' );
+        $stmt->bindValue( ':id', $id );
+        $stmt->execute();
+        $return = $stmt->fetchAll( PDO::FETCH_ASSOC );
+
+        return $return;
+    }*/
 }
