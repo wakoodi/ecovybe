@@ -35,14 +35,14 @@ if (isset($_SESSION['user'])) {
 
             $item = $person->findItem($gardenId);
             ?>
-        <a href="advice.php?id=<?php echo $gardenId;?>" class="advice">
+        <a href="detail.php?id=<?php echo $gardenId;?>" class="detail">
             <div class="singleGarden">
                 <p> 
                     <img src="<?php echo $item['pic_url']?>" alt="product">
                     <h2><?php echo htmlspecialchars($garden['name'])?></h2>
                     <?php echo $item['name']?>
                 </p>
-                <a href="advice.php?id=<?php echo $gardenId;?>">Advies</a>
+                <a href="detail.php?id=<?php echo $gardenId;?>">Details</a>
             </div>
         </a>
         <?php endforeach; ?>
