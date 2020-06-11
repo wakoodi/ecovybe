@@ -9,11 +9,11 @@ if (isset($_SESSION['user'])) {
     $info = $person->findCurrentUser($email);
     $user_id = $info["id"];
     
-    $gardenId = $person->getGardenId();
+    $gardenId = $_GET['id'];
     $gardenData = $person->specificGarden($user_id, $gardenId);
 
     $curlData = $person->doCurl();
-
+    $item = $person->findItem($gardenId);
 
 
    
@@ -33,7 +33,8 @@ if (isset($_SESSION['user'])) {
 </head>
 <body>
     <?php include("includes/header.php") ?>
-    <h1>Tomaten</h1>
+    <h1><?php echo $gardenData['name']; ?></h1>
+    <p><?php echo $item['name']; ?></p>
     
     <ul class="progress">
         <li>Zaaien</li>
@@ -45,7 +46,6 @@ if (isset($_SESSION['user'])) {
     <p>Bodemvochtigheid: <?php echo $curlData['humidity']; ?> %</p>
     <p>UV-index: <?php echo $curlData['uv_index']; ?></p>
 
-    <p><?php echo $gardenData["name"]; ?></p>
     <iframe src="https://console.thinger.io/#!/dashboards/Data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJEYXNoYm9hcmRfRGF0YSIsInVzciI6Ikxpc2FEcnNlIn0.PrKchtvblAevWCZH_idVyfQseaOfjrr5W7HjcWG8igk" frameborder="0" title="dashboard"></iframe>
     <?php include("includes/nav.php") ?>
 </body>

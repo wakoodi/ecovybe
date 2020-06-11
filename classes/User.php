@@ -13,7 +13,6 @@ class User
     private $currentFirstName;
     private $currentLastName;
     private $currentPassword;
-    private $gardenId;
 
 
     /**
@@ -392,35 +391,22 @@ class User
 
    public function specificGarden( $user_id, $garden_id ) 
     {
-        $gardenId = $this->getGardenId($garden_id);
+      
         $conn = Db::getConnection();
         $stmt = $conn->prepare( 'SELECT * FROM garden WHERE user_id=:user_id AND id=:garden_id' );
         $stmt->bindValue( ':user_id', $user_id );
-        $stmt->bindValue( ':garden_id', $gardenId );
+        $stmt->bindValue( ':garden_id', $garden_id );
         $stmt->execute();
         $return = $stmt->fetchAll( PDO::FETCH_ASSOC );
-        var_dump($return);
-        return $return;
-    }
-
- 
-    public function getGardenId()
-    {
-        return $this->gardenId;
-    }
-
-    public function setGardenId($gardenId)
-    {
-        $this->gardenId = $gardenId;
-        return $this;
+       
+        return $return[0];
     }
 
     public function doCurl(){
       
         $result = file_get_contents("http://localhost/ecovybe/curl.php");
         $array = json_decode($result, true);
-        var_dump($array);
-        
+
         return $array;
     }
 }
