@@ -2,12 +2,15 @@
 
 session_start();
 include_once( __DIR__ . '/classes/User.php' );
+include_once( __DIR__ . '/classes/Garden.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
-    $person = new User;
-    $items = $person->findAllItems();
-    $info = $person->findCurrentUser($email);
+    $user = new User;
+    $info = $user->findCurrentUser($email);
+
+    $garden = new Garden;
+    $items = $garden->findAllItems();
 } else {
     header("Location: login.php");
 }

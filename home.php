@@ -2,15 +2,18 @@
 
 session_start();
 include_once( __DIR__ . '/classes/User.php' );
+include_once( __DIR__ . '/classes/Garden.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
-    $person = new User;
-    $info = $person->findCurrentUser($email);
+    $user = new User;
+    $info = $user->findCurrentUser($email);
 
     $currentUserId = $info['id'];
     
-    $gardens = $person->findGardens($currentUserId);
+    $garden = new Garden;
+    $gardens = $garden->findGardens($currentUserId);
+    
 
 } else {
     header("Location: login.php");
@@ -30,16 +33,15 @@ if (isset($_SESSION['user'])) {
     <?php include("includes/header.php") ?>
     <h1 class="welcome">Welkom <?php echo htmlspecialchars($info['firstName'])?> !</h1>
     <div class="gardens">
-        <?php foreach ($gardens as $garden) : ?>
-           <?php $gardenId = $garden['id'];
-
-            $item = $person->findItem($gardenId);
+        <?php foreach ($gardens as $g) : ?>
+           <?php $gardenId = $g['id'];
+                 $item = $garden->findItem($gardenId);
             ?>
         <a href="detail.php?id=<?php echo $gardenId;?>" class="detail">
             <div class="singleGarden">
                 <p> 
                     <img src="<?php echo $item['pic_url']?>" alt="product">
-                    <h2 class="gardenname"><?php echo htmlspecialchars($garden['name'])?></h2>
+                    <h2 class="gardenname"><?php echo htmlspecialchars($g['name'])?></h2>
                     <p class="gardenname"><?php echo $item['name']?></p>
                 </p>
                 <a class="advicelink advice" href="detail.php?id=<?php echo $gardenId;?>">Details</a>

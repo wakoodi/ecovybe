@@ -2,6 +2,7 @@
 
 session_start();
 include_once( __DIR__ . '/classes/User.php' );
+include_once( __DIR__ . '/classes/Garden.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
@@ -9,11 +10,12 @@ if (isset($_SESSION['user'])) {
     $info = $person->findCurrentUser($email);
     $user_id = $info["id"];
     
+    $garden = new Garden;
     $gardenId = $_GET['id'];
-    $gardenData = $person->specificGarden($user_id, $gardenId);
+    $gardenData = $garden->specificGarden($user_id, $gardenId);
 
-    $curlData = $person->doCurl();
-    $item = $person->findItem($gardenId);
+    $curlData = $garden->doCurl();
+    $item = $garden->findItem($gardenId);
 
 
    

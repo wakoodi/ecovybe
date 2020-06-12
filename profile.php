@@ -5,8 +5,8 @@ include_once( __DIR__ . '/classes/User.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
-    $person = new User;
-    $info = $person->findCurrentUser($email);
+    $user = new User;
+    $info = $user->findCurrentUser($email);
 
 
 } else {
