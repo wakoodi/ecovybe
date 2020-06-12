@@ -8,9 +8,23 @@ if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $user = new User;
     $info = $user->findCurrentUser($email);
+    $currentUserId = $info['id'];
 
     $garden = new Garden;
+    if (!empty($_POST)) {
+        $garden->setName($_POST['gardenName']);
+        $garden->setItems_id($_POST['item']);
+        $garden->setKitCode($_POST['kitCode']);
+        $garden->setCreated(date("Y-m-d h:i:sa"));
+
+    
+        $garden->setUser_id($currentUserId);
+        
+        $garden->save();
+        $success = "Tuin is aangemaakt!";
+    }
     $items = $garden->findAllItems();
+
 } else {
     header("Location: login.php");
 }
@@ -27,6 +41,11 @@ if (isset($_SESSION['user'])) {
 </head>
 <body>
     <?php include("includes/header.php") ?>
+    <?php if ( isset( $success ) ): ?>
+        <div class = 'alert alert-success' role = 'alert'>
+            <?php echo $success ?>
+        </div>
+    <?php endif; ?>
     <h1>Nieuwe tuin toevoegen:</h1>
     <form action="" method="post">
       <div class="form-group">
@@ -35,11 +54,12 @@ if (isset($_SESSION['user'])) {
       </div>
       <div class="form-group">
         <div class="dropdown">
-        <label for="items">Kies wat je zal kweken</label></br>
-            <select name="items" class="form-control">
-                <?php foreach ($items as $item){
-                    echo "<option value=$item>$item</option>";
-                }?>
+        <label for="item">Kies wat je zal kweken</label></br>
+            <select name="item" class="form-control">
+                <?php foreach ($items as $item): echo $item['id'] ?>
+
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php endforeach;?>
             </select>
         </div>
       </div>

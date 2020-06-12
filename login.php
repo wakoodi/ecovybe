@@ -11,7 +11,7 @@
             $complete = $user->checkComplete();
             $user->login( $complete );
         } else {
-            $error = "We couldn't log you in";
+            $error = "We kunnen u niet aanmelden, probeer opnieuw.";
         }
 
     } catch ( \Throwable $th ) {

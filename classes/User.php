@@ -14,7 +14,6 @@ class User
     private $currentLastName;
     private $currentPassword;
 
-
     /**
     * Get the value of id
     */

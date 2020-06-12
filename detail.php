@@ -6,8 +6,8 @@ include_once( __DIR__ . '/classes/Garden.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
-    $person = new User;
-    $info = $person->findCurrentUser($email);
+    $user = new User;
+    $info = $user->findCurrentUser($email);
     $user_id = $info["id"];
     
     $garden = new Garden;

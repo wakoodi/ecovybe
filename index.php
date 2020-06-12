@@ -10,7 +10,7 @@
             $user->setPassword($_POST['password']);          
             
             $user->save();
-            $success = "User saved!";
+            $success = "Profiel is aangemaakt!";
         } catch (\Throwable $th) {
             $error = $th->getMessage();
         }
