@@ -31,15 +31,19 @@ if (isset($_SESSION['user'])) {
         <input type="text" placeholder="Naam tuin" name="gardenName" id="gardenName" class="form-control">
       </div>
       <div class="form-group">
-        <form action="" method="POST">
-            <div class="dropdown">
-            <label for="items">Kies wat je zal kweken</label></br>
-                <select name="items" class="form-control">
-                    <?php foreach ($items as $item){
-                        echo "<option value=$item>$item</option>";
-                    }?>
-                </select>
-            </div>
+        <div class="dropdown">
+        <label for="items">Kies wat je zal kweken</label></br>
+            <select name="items" class="form-control">
+                <?php foreach ($items as $item){
+                    echo "<option value=$item>$item</option>";
+                }?>
+            </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <img src="public/icons/plant.png" alt="plant icon">
+        <input type="text" placeholder="Kit Code" name="kitCode" id="kitCode" class="form-control">
+        <p class="kitCodeInfo">Deze code is terug te vinden op de Ecovybe kit.</p>
       </div>
       <div>
         <input type="submit" value="Start met groeien!" class="btn btn-primary">
