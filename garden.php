@@ -16,8 +16,6 @@ if (isset($_SESSION['user'])) {
         $garden->setItems_id($_POST['item']);
         $garden->setKitCode($_POST['kitCode']);
         $garden->setCreated(date("Y-m-d h:i:sa"));
-
-    
         $garden->setUser_id($currentUserId);
         
         $garden->save();
@@ -56,8 +54,7 @@ if (isset($_SESSION['user'])) {
         <div class="dropdown">
         <label for="item">Kies wat je zal kweken</label></br>
             <select name="item" class="form-control">
-                <?php foreach ($items as $item): echo $item['id'] ?>
-
+                <?php foreach ($items as $item): ?>
                     <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
                 <?php endforeach;?>
             </select>

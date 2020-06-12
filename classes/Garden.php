@@ -219,11 +219,6 @@ class Garden {
             $statement->bindValue(':created', $created);
             $statement->bindValue(':user_id', $user_id);
 
-            var_dump($name);
-            var_dump($items_id);
-            var_dump($kitCode);
-            var_dump($created);
-            var_dump($user_id);
             $result = $statement->execute();
 
             return $result;
