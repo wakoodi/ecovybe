@@ -31,13 +31,6 @@ if (isset($_SESSION['user'])) {
 <body>
     <?php include("includes/header.php") ?>
     <h1><?php echo htmlspecialchars($info['firstName'])." ".htmlspecialchars($info['lastName'])?></h1>
-    <div>
-        <p>Hulp in de applicatie</p>
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-    </div>
     <ul>
         <?php foreach ($allGardens as $oneGarden): ?>
         <li>

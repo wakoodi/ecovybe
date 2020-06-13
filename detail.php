@@ -38,12 +38,6 @@ if (isset($_SESSION['user'])) {
     <h1><?php echo $gardenData['name']; ?></h1>
     <p><?php echo $item['name']; ?></p>
     
-    <ul class="progress">
-        <li>Zaaien</li>
-        <li>Wateren</li>
-        <li>Oogsten</li>
-    </ul>
-
     <p>Temperatuur: <?php echo $curlData['temperature']; ?> °c</p>
     <p>Bodemvochtigheid: <?php echo $curlData['humidity']; ?> %</p>
     <p>UV-index: <?php echo $curlData['uv_index']; ?></p>
