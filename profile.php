@@ -2,12 +2,17 @@
 
 session_start();
 include_once( __DIR__ . '/classes/User.php' );
+include_once( __DIR__ . '/classes/Garden.php' );
 
 if (isset($_SESSION['user'])) {
     $email = $_SESSION['user'];
     $user = new User;
     $info = $user->findCurrentUser($email);
 
+    $currentUserId = $info['id'];
+
+    $garden = new Garden;
+    $allGardens = $garden->findGardens($currentUserId);
 
 } else {
     header("Location: login.php");
@@ -34,18 +39,12 @@ if (isset($_SESSION['user'])) {
         </label>
     </div>
     <ul>
+        <?php foreach ($allGardens as $oneGarden): ?>
         <li>
-            <p>Heeft tomaten water gegeven</p>
-            <p>2h geleden</p>
+            <p>Heeft tuin "<?php echo $oneGarden['name']; ?>" aangemaakt </p>
+            <p>op <?php echo $oneGarden['created']; ?></p>
         </li>
-        <li>
-            <p>Heeft tomaten geplant</p>
-            <p>1d geleden</p>
-        </li>
-        <li>
-            <p>Heeft tuintje aangemaakt</p>
-            <p>2d geleden</p>
-        </li>
+        <?php endforeach; ?>
     </ul>
     <?php include("includes/nav.php") ?>
 </body>

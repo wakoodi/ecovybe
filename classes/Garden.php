@@ -14,7 +14,7 @@ class Garden {
 
     public function findGardens($currentUserId){
         $conn = Db::getConnection();
-        $statement = $conn->prepare( 'SELECT * FROM garden where user_id = :currentUserId' );
+        $statement = $conn->prepare( 'SELECT * FROM garden where user_id = :currentUserId ORDER BY created DESC' );
         $statement->bindValue( ':currentUserId', $currentUserId );
         $statement->execute();
         $result = $statement->fetchAll( PDO::FETCH_ASSOC );
