@@ -2,9 +2,9 @@
 
 const SETTINGS = [
     'db'=>[
-        'user'      => 'root',
-        'password'  => '',
+        'user'      => 'amberhm329_ecovybe',
+        'password'  => 'ecovybe',
         'host'      => 'localhost',
-        'dbname'    => 'ecovybe'
+        'dbname'    => 'amberhm329_ecovybe'
     ]
 ];
