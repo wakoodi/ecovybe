@@ -21,7 +21,7 @@
    $succesFontType = "italic";
    $succesPadding = "2.5%";
    $succesRadius = "7px";
-   $succesBackgroundColor ="#FFAB32";
+   $succesBackgroundColor ="#a06db1";
    $succesHeight ="40px";
    $succesWidth ="100px";
 ?>
