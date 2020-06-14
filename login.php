@@ -29,7 +29,7 @@
     <title>Sign in</title>
 </head>
 <body class="container">
-    <?php include("includes/header.php") ?>
+    <?php include("includes/headerno.php") ?>
     <div><?php if ( isset( $error ) ): ?></div>
     <div class="error" role = 'alert'>
         <?php echo $error ?>

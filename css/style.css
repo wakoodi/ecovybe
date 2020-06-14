@@ -20,19 +20,7 @@ a{
   grid-row-end: 1;
   height: 220px;
   width: auto;
-  background-image: url(../public/images/header.svg);
-  background-size: auto 220px;
-  background-repeat: no-repeat;
-}
-
-.headerno{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  height: 220px;
-  width: auto;
-  background-image: url(../public/images/header.svg);
+  background-image: url("../public/images/header.svg");
   background-size: auto 220px;
   background-repeat: no-repeat;
 }
