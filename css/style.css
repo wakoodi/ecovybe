@@ -30,6 +30,7 @@ a{
   margin-bottom: 30%;
   margin-left: 5%;
   margin-right:5%;
+  margin-top: 6%;
 }
 
 .logoheader{
@@ -295,11 +296,11 @@ h1{
 /* Home: gardens when logged in and already have gardens*/
 .hello{
   display: inline-grid;
-  grid-row-start: 2;
+  grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 0px;
+  margin-top: 95%;
   margin-bottom: 5%;
-  margin-left:27%;
+  margin-left: 45%;
   color: #4C4C4C;
   font-family: Noteworthy;
   font-size: 20px;
@@ -481,7 +482,7 @@ p.gardenname{
 
 .newgardenheader{
   display: inline-grid;
-  grid-row-start: 2;
+  grid-row-start: 1;
   grid-row-end: 2;
   margin-top: 0px;
   margin-bottom: 8%;
@@ -559,7 +560,7 @@ p.gardenname{
   grid-column-end: 4;
   grid-row-start: 6;
   grid-row-end: 6;
-  margin-top:-5%;
+  margin-top: 20%;
 }
 
 .navbar div{
