@@ -18,11 +18,12 @@ a{
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 1;
-  height: 220px;
-  width: auto;
-  background-image: url("../public/images/header.svg");
-  background-size: auto 220px;
+  height: 235px;
+  /* width: 100%; */
+  background-image: url(../public/images/header.svg);
+  /* background-size: 100% 220px; */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .back{
@@ -298,9 +299,9 @@ h1{
   display: inline-grid;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 95%;
+  margin-top: 62%;
   margin-bottom: 5%;
-  margin-left: 45%;
+  margin-left: 20%;
   color: #4C4C4C;
   font-family: Noteworthy;
   font-size: 20px;
@@ -311,16 +312,25 @@ h1{
 }
 
 .gardens{
-  display: inline-grid;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   grid-row-start: 2;
   grid-row-end: 3;
-  margin-top: 10%;
+  margin-left: 7.5%;
+  margin-top: -5%;
   text-align: center;
 }
 
 .singleGarden{
-  margin-left: 57.5%;
-  margin-top:-2.5%;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  order:3;
+  flex-grow: 3;
+  align-self: auto;
 }
 
 p.singleGarden{
@@ -484,7 +494,7 @@ p.gardenname{
   display: inline-grid;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 0px;
+  margin-top: 57%;
   margin-bottom: 8%;
   margin-left:15%;
   color: #4C4C4C;
@@ -566,7 +576,7 @@ p.gardenname{
 .navbar div{
   height:80px;
   width: 100%;
-  margin-top: 35%;
+  margin-top: 5%;
 }
 
 .nav{
