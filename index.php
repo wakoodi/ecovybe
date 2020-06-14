@@ -26,8 +26,7 @@
     <title>Sign in</title>
 </head>
 <body class="container">
-        <a href="home.php"><img class="logoheaderclear" src="/public/images/logo.svg" alt="logo ecovybe"></a>
-
+    <?php include("includes/headerno.php") ?>
     <h1>Registreer hier <br> om te starten met tuinieren.</h1>
     <?php if (isset($error)): ?>
         <div class="error" role="alert">
