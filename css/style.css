@@ -136,7 +136,7 @@ form.form{
   grid-row-end: 1;
   height: 220px;
   width: auto;
-  background-image: url(../public/images/header.svg);
+  background-image: url("../public/images/header.svg");
   background-size: auto 220px;
   background-repeat: no-repeat;
 }
