@@ -25,6 +25,18 @@ a{
   background-repeat: no-repeat;
 }
 
+.headerno{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  height: 220px;
+  width: auto;
+  background-image: url(../public/images/header.svg);
+  background-size: auto 220px;
+  background-repeat: no-repeat;
+}
+
 .back{
   height: 30px;
   margin-bottom: 38%;
@@ -33,6 +45,12 @@ a{
 }
 
 .logoheader{
+  width: 150px;
+  margin-left: 12.5%;
+  margin-bottom: 3%;
+}
+
+.logoheaderno{
   width: 150px;
   margin-left: 12.5%;
   margin-bottom: 3%;
@@ -128,25 +146,6 @@ form.form{
 }
 
 /* Register page */
-
-.headerclear{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  height: 220px;
-  width: auto;
-  background-image: url("../public/images/header.svg");
-  background-size: auto 220px;
-  background-repeat: no-repeat;
-}
-
-.logoheaderclear{
-  width: 150px;
-  margin-left: 12.5%;
-  margin-bottom: 3%;
-}
-
 h1{
   display: inline-grid;
   grid-column-start: 1;
